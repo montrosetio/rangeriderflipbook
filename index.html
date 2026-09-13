@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Range Rider — Flipbook</title>
+<script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+<style>
+  :root {
+    --paper: #f2ede3;
+    --ink: #1a1a1a;
+    --accent: #c1440e;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: #0d0d0d;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: var(--ink);
+    padding: 30px 16px;
+  }
+  h1 {
+    color: var(--paper);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    margin: 0;
+    text-align: center;
+  }
+  #book {
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+  }
+  .page {
+    background-color: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .page img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: white;
+  }
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .controls button {
+    background: var(--paper);
+    border: none;
+    padding: 10px 20px;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  .controls button:hover {
+    background: var(--accent);
+    color: var(--paper);
+  }
+  #pageIndicator {
+    color: var(--paper);
+    font-size: 13px;
+    min-width: 70px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<h1>Range Rider — drag a corner, or use the arrows, to flip through</h1>
+
+<div id="book">
+  <div class="page" data-density="hard"><img src="pages/page-01.jpg" alt="Page 1"></div>
+  <div class="page"><img src="pages/page-02.jpg" alt="Page 2"></div>
+  <div class="page"><img src="pages/page-03.jpg" alt="Page 3"></div>
+  <div class="page"><img src="pages/page-04.jpg" alt="Page 4"></div>
+  <div class="page"><img src="pages/page-05.jpg" alt="Page 5"></div>
+  <div class="page"><img src="pages/page-06.jpg" alt="Page 6"></div>
+  <div class="page"><img src="pages/page-07.jpg" alt="Page 7"></div>
+  <div class="page"><img src="pages/page-08.jpg" alt="Page 8"></div>
+  <div class="page"><img src="pages/page-09.jpg" alt="Page 9"></div>
+  <div class="page"><img src="pages/page-10.jpg" alt="Page 10"></div>
+  <div class="page"><img src="pages/page-11.jpg" alt="Page 11"></div>
+  <div class="page"><img src="pages/page-12.jpg" alt="Page 12"></div>
+  <div class="page"><img src="pages/page-13.jpg" alt="Page 13"></div>
+  <div class="page"><img src="pages/page-14.jpg" alt="Page 14"></div>
+  <div class="page"><img src="pages/page-15.jpg" alt="Page 15"></div>
+  <div class="page"><img src="pages/page-16.jpg" alt="Page 16"></div>
+  <div class="page"><img src="pages/page-17.jpg" alt="Page 17"></div>
+  <div class="page"><img src="pages/page-18.jpg" alt="Page 18"></div>
+  <div class="page"><img src="pages/page-19.jpg" alt="Page 19"></div>
+  <div class="page"><img src="pages/page-20.jpg" alt="Page 20"></div>
+  <div class="page"><img src="pages/page-21.jpg" alt="Page 21"></div>
+  <div class="page"><img src="pages/page-22.jpg" alt="Page 22"></div>
+  <div class="page"><img src="pages/page-23.jpg" alt="Page 23"></div>
+  <div class="page"><img src="pages/page-24.jpg" alt="Page 24"></div>
+  <div class="page"><img src="pages/page-25.jpg" alt="Page 25"></div>
+  <div class="page"><img src="pages/page-26.jpg" alt="Page 26"></div>
+  <div class="page"><img src="pages/page-27.jpg" alt="Page 27"></div>
+  <div class="page"><img src="pages/page-28.jpg" alt="Page 28"></div>
+  <div class="page"><img src="pages/page-29.jpg" alt="Page 29"></div>
+  <div class="page"><img src="pages/page-30.jpg" alt="Page 30"></div>
+  <div class="page"><img src="pages/page-31.jpg" alt="Page 31"></div>
+  <div class="page"><img src="pages/page-32.jpg" alt="Page 32"></div>
+  <div class="page"><img src="pages/page-33.jpg" alt="Page 33"></div>
+  <div class="page"><img src="pages/page-34.jpg" alt="Page 34"></div>
+  <div class="page"><img src="pages/page-35.jpg" alt="Page 35"></div>
+  <div class="page"><img src="pages/page-36.jpg" alt="Page 36"></div>
+  <div class="page"><img src="pages/page-37.jpg" alt="Page 37"></div>
+  <div class="page"><img src="pages/page-38.jpg" alt="Page 38"></div>
+  <div class="page"><img src="pages/page-39.jpg" alt="Page 39"></div>
+  <div class="page"><img src="pages/page-40.jpg" alt="Page 40"></div>
+  <div class="page"><img src="pages/page-41.jpg" alt="Page 41"></div>
+  <div class="page"><img src="pages/page-42.jpg" alt="Page 42"></div>
+  <div class="page"><img src="pages/page-43.jpg" alt="Page 43"></div>
+  <div class="page"><img src="pages/page-44.jpg" alt="Page 44"></div>
+  <div class="page"><img src="pages/page-45.jpg" alt="Page 45"></div>
+  <div class="page"><img src="pages/page-46.jpg" alt="Page 46"></div>
+  <div class="page"><img src="pages/page-47.jpg" alt="Page 47"></div>
+  <div class="page"><img src="pages/page-48.jpg" alt="Page 48"></div>
+  <div class="page"><img src="pages/page-49.jpg" alt="Page 49"></div>
+  <div class="page"><img src="pages/page-50.jpg" alt="Page 50"></div>
+  <div class="page"><img src="pages/page-51.jpg" alt="Page 51"></div>
+  <div class="page"><img src="pages/page-52.jpg" alt="Page 52"></div>
+  <div class="page"><img src="pages/page-53.jpg" alt="Page 53"></div>
+  <div class="page"><img src="pages/page-54.jpg" alt="Page 54"></div>
+  <div class="page"><img src="pages/page-55.jpg" alt="Page 55"></div>
+  <div class="page"><img src="pages/page-56.jpg" alt="Page 56"></div>
+  <div class="page"><img src="pages/page-57.jpg" alt="Page 57"></div>
+  <div class="page"><img src="pages/page-58.jpg" alt="Page 58"></div>
+  <div class="page"><img src="pages/page-59.jpg" alt="Page 59"></div>
+  <div class="page"><img src="pages/page-60.jpg" alt="Page 60"></div>
+  <div class="page"><img src="pages/page-61.jpg" alt="Page 61"></div>
+  <div class="page"><img src="pages/page-62.jpg" alt="Page 62"></div>
+  <div class="page"><img src="pages/page-63.jpg" alt="Page 63"></div>
+  <div class="page"><img src="pages/page-64.jpg" alt="Page 64"></div>
+  <div class="page"><img src="pages/page-65.jpg" alt="Page 65"></div>
+  <div class="page"><img src="pages/page-66.jpg" alt="Page 66"></div>
+  <div class="page"><img src="pages/page-67.jpg" alt="Page 67"></div>
+  <div class="page"><img src="pages/page-68.jpg" alt="Page 68"></div>
+  <div class="page"><img src="pages/page-69.jpg" alt="Page 69"></div>
+  <div class="page"><img src="pages/page-70.jpg" alt="Page 70"></div>
+  <div class="page"><img src="pages/page-71.jpg" alt="Page 71"></div>
+  <div class="page" data-density="hard"><img src="pages/page-72.jpg" alt="Page 72"></div>
+</div>
+
+<div class="controls">
+  <button id="prev">‹ Prev</button>
+  <span id="pageIndicator">1 / 72</span>
+  <button id="next">Next ›</button>
+</div>
+
+<script>
+  const pageFlip = new St.PageFlip(document.getElementById('book'), {
+    width: 400,
+    height: 518,
+    size: 'stretch',
+    minWidth: 260,
+    maxWidth: 600,
+    minHeight: 337,
+    maxHeight: 780,
+    maxShadowOpacity: 0.5,
+    showCover: true,
+    mobileScrollSupport: true
+  });
+
+  pageFlip.loadFromHTML(document.querySelectorAll('.page'));
+
+  const indicator = document.getElementById('pageIndicator');
+  const totalPages = 72;
+
+  pageFlip.on('flip', (e) => {
+    indicator.textContent = (e.data + 1) + ' / ' + totalPages;
+  });
+
+  document.getElementById('prev').addEventListener('click', () => pageFlip.flipPrev());
+  document.getElementById('next').addEventListener('click', () => pageFlip.flipNext());
+</script>
+
+</body>
+</html>
